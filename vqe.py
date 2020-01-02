@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
 import pylab
 import copy
@@ -17,9 +11,6 @@ from qiskit.chemistry.drivers import PySCFDriver
 from qiskit.chemistry.core import Hamiltonian, QubitMappingType
 
 
-# In[2]:
-
-
 molecule = 'H .0 .0 -{0}; Li .0 .0 {0}'
 algorithms = ['VQE', 'ExactEigensolver']
 
@@ -30,8 +21,6 @@ energies = np.empty([len(algorithms), len(dr)])
 hf_energies = np.empty(len(dr))
 distances = np.empty(len(dr))
 
-
-# In[ ]:
 
 
 for i, d in enumerate(dr):
@@ -69,14 +58,6 @@ for i, d in enumerate(dr):
     distances[i] = d
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 pylab.plot(distances, hf_energies, label='Hartree-Fock')
 for j in range(len(algorithm)):
@@ -85,28 +66,3 @@ pylab.xlabel('Interatomic distance')
 pylab.ylabel('Energy')
 pylab.title('LiH Ground State Energy')
 pylab.legend(loc='upper right');
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
